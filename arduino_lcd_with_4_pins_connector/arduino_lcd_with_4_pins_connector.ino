@@ -27,7 +27,7 @@ void setup() {
   lcd.setBacklight(HIGH);
   lcd.setCursor(0,0);
   
-  lcd.print("I just made an");
+  lcd.print("Good Morning!");
 }
 
 void loop() {

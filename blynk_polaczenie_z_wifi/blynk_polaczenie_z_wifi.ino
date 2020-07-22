@@ -3,17 +3,20 @@
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
-char auth[] = "x_d6mt31XiwC9WfGmEB98MqUN1x3EU2u";
-char ssid[] = "dej_mie_te_internety";
-char pass[] = "2020nowehaslo";
+char auth[] = "";
+char ssid[] = "";
+char pass[] = "";
 
 WidgetTerminal terminal(V1);
 BLYNK_WRITE(V1)
 {
-  if (String("Foo") == param.asStr()) {
-    terminal.println("You said: 'Foo'") ;
-    terminal.println("I said: 'Bar'") ;
-  } else {
+  if (String("Foo") == param.asStr())
+  {
+    terminal.println("You said: 'Foo'");
+    terminal.println("I said: 'Bar'");
+  }
+  else
+  {
     terminal.print("\nYou said:");
     terminal.write(param.getBuffer(), param.getLength());
     terminal.println();
@@ -23,7 +26,8 @@ BLYNK_WRITE(V1)
   terminal.flush();
 }
 
-BLYNK_WRITE(V3) {
+BLYNK_WRITE(V3)
+{
   int x = param[0].asInt();
   int y = param[1].asInt();
 
@@ -44,7 +48,7 @@ void setup()
 
   terminal.println(F("Blynk v" BLYNK_VERSION ": Device started"));
   terminal.println(F("-------------"));
-  terminal.println(F("Type 'Marco' and get a reply, or type"));
+  terminal.println(F("Type 'Foo' and get a reply, or type"));
   terminal.println(F("anything else and get it printed back."));
   terminal.flush();
 }
